@@ -12,7 +12,9 @@ namespace DeploymentMode.Processors
 
 			if (settingsItem[Templates.DeploymentMode.Fields.DeploymentModeOn].ToString().Equals("1") && settingsItem[Templates.DeploymentMode.Fields.PreventPublishing.PreventPublishingOn].ToString().Equals("1"))
 			{
+				//Check if Admin is allowed to publish
 				var allowAdmin = settingsItem[Templates.DeploymentMode.Fields.PreventPublishing.AllowAdminToPublish].ToString().Equals("1");
+				//Check if current user is Administrator
 				var isAdmin = User.Current.IsAdministrator;
 
 				if (allowAdmin == false || (allowAdmin && isAdmin == false))

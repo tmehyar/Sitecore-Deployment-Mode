@@ -8,12 +8,11 @@ namespace DeploymentMode
 		internal static string MasterDb => "master";
 		internal static ID DeploymentModeSettingsItemId => ID.Parse("{B89C9EA8-EC8C-4792-A472-E748AAD5A9F0}");
 
-		private static Item _settingsItem;
 		internal static Item SettingsItem
 		{
 			get
 			{
-				return _settingsItem = Sitecore.Data.Database.GetDatabase(MasterDb).GetItem(DeploymentModeSettingsItemId);
+				return Sitecore.Data.Database.GetDatabase(MasterDb).GetItem(DeploymentModeSettingsItemId);
 			}
 		}
 	}
