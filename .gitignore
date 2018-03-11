@@ -1,0 +1,9 @@
+*.pdb
+*.dll
+*.user
+*.cache
+*.FileListAbsolute.txt
+obj/
+/Properties/AssemblyInfo.cs
+/.vs/
+/packages/
